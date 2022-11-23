@@ -1,0 +1,24 @@
+{
+  "name": "awesome-qr-code-generator",
+  "version": "1.0.1",
+  "description": "QR code generator",
+  "main": "./lib/QrCodeGenerator.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmaks1/qr-code-generator.git"
+  },
+  "keywords": [
+    "qr",
+    "code",
+    "generator"
+  ],
+  "author": "jmaks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jmaks1/qr-code-generator/issues"
+  },
+  "homepage": "https://github.com/jmaks1/qr-code-generator#readme"
+}
