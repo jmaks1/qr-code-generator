@@ -1159,13 +1159,14 @@ export class Ecc {
 
     /*-- Constructor and fields --*/
 
-    private constructor(
-        // In the range 0 to 3 (unsigned 2-bit integer).
-        public readonly ordinal: int,
-        // (Package-private) In the range 0 to 3 (unsigned 2-bit integer).
-        public readonly formatBits: int) {
-    }
-
+    /**
+     * In the range 0 to 3 (unsigned 2-bit integer).
+     * @param ordinal
+     * (Package-private) In the range 0 to 3 (unsigned 2-bit integer).
+     * @param formatBits
+     * @private
+     */
+    private constructor(public readonly ordinal: int, public readonly formatBits: int) {}
 }
 
 
@@ -1185,12 +1186,14 @@ export class Mode {
 
     /*-- Constructor and fields --*/
 
-    private constructor(
-        // The mode indicator bits, which is a uint4 value (range 0 to 15).
-        public readonly modeBits: int,
-        // Number of character count bits for three different version ranges.
-        private readonly numBitsCharCount: [int, int, int]) {
-    }
+    /**
+     * The mode indicator bits, which is a uint4 value (range 0 to 15).
+     * @param modeBits
+     * Number of character count bits for three different version ranges.
+     * @param numBitsCharCount
+     * @private
+     */
+    private constructor(public readonly modeBits: int, private readonly numBitsCharCount: [int, int, int]) {}
 
 
     /*-- Method --*/
@@ -1204,5 +1207,4 @@ export class Mode {
     public numCharCountBits(ver: int): int {
         return this.numBitsCharCount[Math.floor((ver + 7) / 17)];
     }
-
 }

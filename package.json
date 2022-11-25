@@ -1,9 +1,10 @@
 {
   "name": "awesome-qr-code-generator",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "QR code generator",
-  "main": "./lib/QrCodeGenerator.ts",
+  "main": "index.ts",
   "scripts": {
+    "build": "rollup --config",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/jmaks1/qr-code-generator/issues"
   },
-  "homepage": "https://github.com/jmaks1/qr-code-generator#readme"
+  "homepage": "https://github.com/jmaks1/qr-code-generator#readme",
+  "devDependencies": {
+    "rollup": "^3.4.0"
+  }
 }
