@@ -1,6 +1,6 @@
-import { QrCode } from './lib/core';
-import { getOptions, getQrWidth } from './lib/utils';
-import { drawCanvas } from './lib/canvas';
+import { QrCode } from './core';
+import { getOptions, getQrWidth } from './utils';
+import { drawCanvas } from './canvas';
 
 export type TOptions = {
     margin?: number

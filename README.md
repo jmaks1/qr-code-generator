@@ -1,7 +1,7 @@
-# qr-code-generator
+# awesome-qr-code-generator
 
 
-> QR code generator.
+> Simple QR code generator. Output Svg & Png
 
 ## Installation
 Inside your project folder do:
