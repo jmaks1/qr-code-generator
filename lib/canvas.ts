@@ -1,5 +1,5 @@
 import { QrCode } from './core';
-import { isBlank, getActualWidth, getActualScale } from './utils';
+import { isBlank, getQrWidth } from './utils';
 
 /**
  * Update canvas size
@@ -35,27 +35,25 @@ const getCanvasElement = (): HTMLCanvasElement => {
  *
  * @param qr
  * @param margin
- * @param width
  * @param scale
- * @param backgroundColorHex
- * @param codeColorHex
+ * @param backgroundColor
+ * @param codeColor
  */
-export const drawCanvas = (qr: QrCode, margin, width, scale, backgroundColorHex, codeColorHex) => {
-    const actualWidth = getActualWidth(qr.size, margin, width, scale)
-    const actualScale = getActualScale(qr.size, margin, width, scale)
+export const drawCanvas = (qr: QrCode, margin, scale, backgroundColor, codeColor) => {
+    const size = getQrWidth(qr.size, margin) * scale
     const canvas = getCanvasElement();
 
-    setCanvasSize(canvas, actualWidth)
+    setCanvasSize(canvas, size)
 
     const ctx = canvas.getContext('2d') as CanvasRenderingContext2D;
 
     for (let y = -margin; y < qr.size + margin; y++) {
         for (let x = -margin; x < qr.size + margin; x++) {
-            const posX = (x + margin) * actualScale
-            const posY = (y + margin) * actualScale
+            const posX = (x + margin) * scale
+            const posY = (y + margin) * scale
 
-            ctx.fillStyle = qr.getModule(x, y) ? codeColorHex : backgroundColorHex;
-            ctx.fillRect(posX, posY, actualScale, actualScale);
+            ctx.fillStyle = qr.getModule(x, y) ? codeColor.rgba : backgroundColor.rgba;
+            ctx.fillRect(posX, posY, scale, scale);
         }
     }
 

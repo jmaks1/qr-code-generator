@@ -2,9 +2,8 @@ import { QrCode } from './lib/core';
 import { getOptions, getQrWidth } from './lib/utils';
 import { drawCanvas } from './lib/canvas';
 
-type TOptions = {
+export type TOptions = {
     margin?: number
-    width?: number
     scale?: number
     backgroundColor?: string,
     codeColor?: string,
@@ -16,11 +15,11 @@ type TOptions = {
  * @param text
  * @param options
  */
-export const toDataURL = (text: string, options: TOptions) => {
-    const { margin, width, scale, backgroundColor, codeColor, errorCorrectionLevel } = getOptions(options)
+export const toDataURL = (text: string, options?: TOptions) => {
+    const { margin, scale, backgroundColor, codeColor, errorCorrectionLevel } = getOptions(options)
 
     const qr = QrCode.encodeText(text, errorCorrectionLevel);
-    const canvas = drawCanvas(qr, margin, width, scale, backgroundColor.hex, codeColor.hex)
+    const canvas = drawCanvas(qr, margin, scale, backgroundColor, codeColor)
 
     return canvas.toDataURL('image/png')
 }
@@ -32,7 +31,7 @@ export const toDataURL = (text: string, options: TOptions) => {
  * @param text
  * @param options
  */
-export const toSvgString = (text: string, options: TOptions) => {
+export const toSvgString = (text: string, options?: TOptions) => {
     const { margin, backgroundColor, codeColor, errorCorrectionLevel } = getOptions(options)
 
     const qr = QrCode.encodeText(text, errorCorrectionLevel);
