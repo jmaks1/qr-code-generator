@@ -4,7 +4,7 @@
 > Simple QR code generator. Output Svg & Png
 
 ## Installation
-Inside your project folder do:
+For install [npm package](https://www.npmjs.com/package/awesome-qr-code-generator) inside your project folder do:
 
 ```shell
 npm install --save awesome-qr-code-generator
