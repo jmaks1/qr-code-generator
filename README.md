@@ -49,16 +49,9 @@ Define how much wide the quiet zone should be.
 
 ##### `scale`
 Type: `Number`<br>
-Default: `4`
+Default: `20`
 
-Scale factor. A value of `1` means 1px per modules (black dots).
-
-##### `width`
-Type: `Number`<br>
-
-Forces a specific width for the output image.<br>
-If width is too small to contain the qr symbol, this option will be ignored.<br>
-Takes precedence over `scale`.
+Scale factor. A value of `1` means 1px per modules (black dots). Affects only the quality of PNG
 
 ##### `codeColor`
 Type: `String`<br>
